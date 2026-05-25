@@ -479,6 +479,63 @@
     .doctor-avatars span:nth-child(2) { background: #d4e8e4; }
     .doctor-avatars span:nth-child(3) { background: #fde8d0; }
 
+    /* ─── Stats Strip ─── */
+    .stats-strip {
+      background: white;
+      border-bottom: 1px solid rgba(232,160,180,0.2);
+      padding: 0 5%;
+    }
+
+    .stats-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .strip-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 16px;
+      border-right: 1px solid rgba(44,38,36,0.07);
+      text-align: center;
+    }
+
+    .strip-item:last-child { border-right: none; }
+
+    .strip-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600;
+      color: var(--sakura-deep);
+      line-height: 1.1;
+    }
+
+    .strip-unit {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--sakura-deep);
+    }
+
+    .strip-label {
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.06em;
+      margin-top: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .stats-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .strip-item:nth-child(2) { border-right: none; }
+      .strip-item:nth-child(3) { border-top: 1px solid rgba(44,38,36,0.07); }
+      .strip-item:nth-child(4) { border-top: 1px solid rgba(44,38,36,0.07); }
+    }
+
     /* ─── Sections ─── */
     section { padding: 90px 5%; }
 
@@ -1263,6 +1320,28 @@
   </div>
 </div>
 
+<!-- Stats Strip -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="strip-item reveal">
+      <div class="strip-num"><span data-count="8">0</span><span class="strip-unit">科</span></div>
+      <div class="strip-label">診療科</div>
+    </div>
+    <div class="strip-item reveal reveal-delay-1">
+      <div class="strip-num"><span data-count="12">0</span><span class="strip-unit">名</span></div>
+      <div class="strip-label">在籍専門医</div>
+    </div>
+    <div class="strip-item reveal reveal-delay-2">
+      <div class="strip-num"><span data-count="35">0</span><span class="strip-unit">年</span></div>
+      <div class="strip-label">地域医療の実績</div>
+    </div>
+    <div class="strip-item reveal reveal-delay-3">
+      <div class="strip-num"><span data-count="200000" data-suffix="万+">0</span></div>
+      <div class="strip-label">延べ来院数</div>
+    </div>
+  </div>
+</div>
+
 <!-- Departments -->
 <section id="departments">
   <div class="section-label reveal">DEPARTMENTS</div>
@@ -1354,7 +1433,7 @@
 <section id="doctors">
   <div class="section-label reveal">OUR TEAM</div>
   <h2 class="section-title reveal reveal-delay-1">医師紹介</h2>
-  <p class="section-lead reveal reveal-delay-2">各専門分野の豊富な経験を持つ医師が連携して診療にあたります。</p>
+  <p class="section-lead reveal reveal-delay-2">常勤医師12名が連携して診療にあたります。ここでは代表的な4名をご紹介します。</p>
   <div class="doctors-grid">
     <div class="doctor-card reveal reveal-delay-1">
       <div class="doctor-avatar-big doc-bg-1">👨‍⚕️</div>

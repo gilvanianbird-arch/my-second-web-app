@@ -1215,6 +1215,205 @@
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
       .news-item { gap: 0.6rem; }
     }
+
+    /* ─── First Visit Steps ─── */
+    #first-visit {
+      background: white;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 2.5rem;
+      position: relative;
+    }
+
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 52px;
+      left: calc(12.5% + 26px);
+      right: calc(12.5% + 26px);
+      height: 2px;
+      background: linear-gradient(90deg, var(--sakura-light), var(--sakura), var(--sakura-light));
+      z-index: 0;
+    }
+
+    .step-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--sakura), var(--sakura-deep));
+      color: white;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 16px rgba(196,99,122,0.3);
+      flex-shrink: 0;
+    }
+
+    .step-icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .step-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .step-text {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+      .steps-grid::before { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Symptom Guide ─── */
+    .symptom-guide {
+      background: var(--sakura-light);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .symptom-guide-title {
+      grid-column: 1 / -1;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--sakura-deep);
+      margin-bottom: 4px;
+    }
+
+    .symptom-item {
+      font-size: 0.8rem;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      border-radius: 8px;
+      padding: 8px 12px;
+    }
+
+    .symptom-arrow {
+      color: var(--sakura-deep);
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    /* ─── Testimonials ─── */
+    #testimonials {
+      background: linear-gradient(160deg, #edf4f2 0%, var(--cream) 100%);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px 24px;
+      border: 1px solid rgba(74,124,111,0.12);
+      box-shadow: 0 4px 20px var(--shadow);
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px;
+      left: 20px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 3rem;
+      color: var(--sakura-light);
+      line-height: 1;
+    }
+
+    .testimonial-stars {
+      color: #f0a500;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      margin-top: 8px;
+    }
+
+    .testimonial-text {
+      font-size: 0.88rem;
+      color: var(--ink);
+      line-height: 2;
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+
+    .testimonial-author {
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.06em;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Contact CTA Button ─── */
+    .contact-cta-btn {
+      display: inline-block;
+      margin-top: 16px;
+      background: linear-gradient(135deg, var(--sakura), var(--sakura-deep));
+      color: white;
+      text-decoration: none;
+      padding: 10px 24px;
+      border-radius: 24px;
+      font-size: 0.82rem;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 14px rgba(196,99,122,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(196,99,122,0.4);
+    }
   </style>
 </head>
 <body>
@@ -1333,11 +1532,55 @@
   </div>
 </div>
 
+<!-- First Visit Guide -->
+<section id="first-visit">
+  <div class="section-label reveal">FIRST VISIT</div>
+  <h2 class="section-title reveal reveal-delay-1">はじめて受診される方へ</h2>
+  <p class="section-lead reveal reveal-delay-2">受診の流れをご説明します。はじめてでも安心してお越しください。</p>
+  <div class="steps-grid">
+    <div class="step-card reveal reveal-delay-1">
+      <div class="step-num">1</div>
+      <div class="step-icon">💻</div>
+      <div class="step-title">WEBまたはお電話で予約</div>
+      <p class="step-text">24時間いつでもWEB予約が可能。お電話は平日9:00〜17:00、土曜9:00〜12:00まで受付。</p>
+    </div>
+    <div class="step-card reveal reveal-delay-2">
+      <div class="step-num">2</div>
+      <div class="step-icon">📋</div>
+      <div class="step-title">受付・問診票の記入</div>
+      <p class="step-text">保険証をご持参ください。初診の方は問診票をご記入いただきます。お薬手帳もあればご持参ください。</p>
+    </div>
+    <div class="step-card reveal reveal-delay-3">
+      <div class="step-num">3</div>
+      <div class="step-icon">🩺</div>
+      <div class="step-title">診察・検査</div>
+      <p class="step-text">専門医が丁寧に診察します。ご不安なことは何でもお伝えください。必要に応じて検査を行います。</p>
+    </div>
+    <div class="step-card reveal reveal-delay-4">
+      <div class="step-num">4</div>
+      <div class="step-icon">💊</div>
+      <div class="step-title">処方・お会計</div>
+      <p class="step-text">処方箋の発行後、受付にてお会計。近隣の調剤薬局でお薬を受け取れます（院外処方）。</p>
+    </div>
+  </div>
+</section>
+
 <!-- Departments -->
 <section id="departments">
   <div class="section-label reveal">DEPARTMENTS</div>
   <h2 class="section-title reveal reveal-delay-1">診療科のご案内</h2>
   <p class="section-lead reveal reveal-delay-2">各科の専門医が連携し、幅広い疾患に対応しています。</p>
+
+  <div class="symptom-guide reveal">
+    <div class="symptom-guide-title">🔍 こんな症状は、どの科へ？</div>
+    <div class="symptom-item"><span class="symptom-arrow">→</span> 発熱・咳・腹痛・生活習慣病 ／ <strong>内科</strong></div>
+    <div class="symptom-item"><span class="symptom-arrow">→</span> 関節痛・骨折・腰痛・スポーツ障害 ／ <strong>整形外科</strong></div>
+    <div class="symptom-item"><span class="symptom-arrow">→</span> 動悸・息切れ・高血圧 ／ <strong>循環器内科</strong></div>
+    <div class="symptom-item"><span class="symptom-arrow">→</span> 頭痛・めまい・手足のしびれ ／ <strong>神経内科</strong></div>
+    <div class="symptom-item"><span class="symptom-arrow">→</span> 機能回復・リハビリを希望 ／ <strong>リハビリテーション科</strong></div>
+    <div class="symptom-item"><span class="symptom-arrow">→</span> 目のかすみ・視力低下 ／ <strong>眼科</strong></div>
+  </div>
+
   <div class="dept-grid">
     <div class="dept-card reveal reveal-delay-1">
       <span class="dept-emoji">🫁</span>
@@ -1416,6 +1659,30 @@
       <div class="feature-icon icon-peach">🚑</div>
       <div class="feature-title">救急・時間外対応</div>
       <p class="feature-text">急な体調変化にも対応できるよう、救急外来を設置。夜間・休日の緊急受診にも体制を整えています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <div class="section-label reveal">VOICES</div>
+  <h2 class="section-title reveal reveal-delay-1">患者様の声</h2>
+  <p class="section-lead reveal reveal-delay-2">実際にご来院された患者様からいただいた声をご紹介します。</p>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">「整形外科で膝の治療をお願いしました。先生がレントゲンを見ながらとても丁寧に説明してくださり、不安が解消されました。リハビリの先生も親身で助かりました。」</p>
+      <div class="testimonial-author">60代・女性</div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">「WEB予約ができて待ち時間も少なく、受付スタッフの対応もとても親切でした。診察室での説明も丁寧で、次回も必ずここに来たいと思います。」</p>
+      <div class="testimonial-author">40代・男性</div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-3">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">「脳卒中後のリハビリでお世話になっています。理学療法士さんが毎回わかりやすく説明してくださり、回復を実感できています。スタッフ全員の対応が温かいです。」</p>
+      <div class="testimonial-author">70代・男性</div>
     </div>
   </div>
 </section>
@@ -1602,18 +1869,21 @@
       <div class="contact-type">お電話</div>
       <div class="contact-main">000-1234-5678</div>
       <div class="contact-sub">平日 9:00〜17:00<br>土曜 9:00〜12:00</div>
+      <a href="tel:0001234567" class="contact-cta-btn">今すぐ電話する</a>
     </div>
     <div class="contact-card reveal reveal-delay-2">
       <span class="contact-icon-big">💻</span>
       <div class="contact-type">WEB予約</div>
       <div class="contact-main" style="font-size:0.95rem">24時間受付中</div>
       <div class="contact-sub">診察30分前まで予約可能<br>キャンセルもWEBから</div>
+      <a href="#" class="contact-cta-btn">WEB予約はこちら</a>
     </div>
     <div class="contact-card reveal reveal-delay-3">
       <span class="contact-icon-big">✉️</span>
       <div class="contact-type">メール</div>
       <div class="contact-main" style="font-size:0.82rem">info@sakura-hospital.example</div>
       <div class="contact-sub">2営業日以内に返信いたします</div>
+      <a href="mailto:info@sakura-hospital.example" class="contact-cta-btn">メールを送る</a>
     </div>
   </div>
 </section>

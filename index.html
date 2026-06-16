@@ -878,15 +878,17 @@
     }
 
     .access-map {
-      background: linear-gradient(135deg, #edf4f2 0%, #e0eee8 100%);
       border-radius: 20px;
       height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(74,124,111,0.2);
       overflow: hidden;
       position: relative;
+      border: 1px solid rgba(74,124,111,0.2);
+    }
+    .access-map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
     }
 
     .map-placeholder {
@@ -1599,14 +1601,14 @@
 
   <div class="hero-body">
     <div class="hero-content">
-      <div class="hero-badge">🌸 福岡県〇〇市 地域医療の拠点</div>
+      <div class="hero-badge">🌸 福岡県福岡市博多区 地域医療の拠点</div>
       <h1 class="hero-title">患者さまに<br><span>寄り添う医療</span>を、<br>この地域に。</h1>
       <p class="hero-sub">
         さくら総合病院は、内科・外科・整形外科・リハビリテーション科をはじめとする
         多彩な診療科で、地域の皆さまの健康を丁寧にサポートいたします。
       </p>
       <div class="hero-actions">
-        <a href="tel:0001234567" class="btn-primary">📞 診療予約はこちら</a>
+        <a href="tel:0925551234" class="btn-primary">📞 診療予約はこちら</a>
         <a href="#departments" class="btn-outline">診療科を見る →</a>
       </div>
     </div>
@@ -1633,7 +1635,7 @@
           </div>
           <div style="padding-top:12px;border-top:1px solid rgba(255,255,255,0.2)">
             <div style="font-size:0.72rem;color:rgba(255,255,255,0.7);margin-bottom:4px">📞 ご予約・お問い合わせ</div>
-            <div style="font-size:1.1rem;font-weight:600;letter-spacing:0.04em">000-1234-5678</div>
+            <div style="font-size:1.1rem;font-weight:600;letter-spacing:0.04em">092-555-1234</div>
             <div style="font-size:0.7rem;color:rgba(255,255,255,0.65);margin-top:2px">平日 9:00〜17:00 ／ 土曜 9:00〜12:00</div>
           </div>
         </div>
@@ -1951,7 +1953,7 @@
       <div class="notice-item"><div class="notice-dot"></div><div>初診の方は保険証・各種受給者証をお持ちください。</div></div>
       <div class="notice-item"><div class="notice-dot"></div><div>お薬手帳をお持ちの方はご持参ください。スムーズな処方が可能です。</div></div>
       <div class="notice-item"><div class="notice-dot"></div><div>WEB予約は診察の30分前まで受け付けております。</div></div>
-      <div class="notice-item"><div class="notice-dot"></div><div>救急・時間外は専用電話（000-1234-5679）までお問い合わせください。</div></div>
+      <div class="notice-item"><div class="notice-dot"></div><div>救急・時間外は専用電話（092-555-1235）までお問い合わせください。</div></div>
     </div>
   </div>
 </section>
@@ -1995,31 +1997,33 @@
   <h2 class="section-title reveal reveal-delay-1">アクセス</h2>
   <div class="access-layout">
     <div class="access-map reveal reveal-delay-2">
-      <div class="map-placeholder" style="position:relative;z-index:1">
-        <span>🗺️</span>
-        <p>福岡県〇〇市〇〇町1-2-3</p>
-      </div>
+      <iframe
+        src="https://maps.google.com/maps?q=福岡市博多区博多駅前2丁目&hl=ja&z=15&output=embed"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
     <div class="access-details reveal reveal-delay-3">
       <div class="access-row">
         <div class="access-icon">📍</div>
         <div>
           <div class="access-label">住所</div>
-          <div class="access-value">〒000-0000<br>福岡県〇〇市〇〇町1-2-3</div>
+          <div class="access-value">〒812-0011<br>福岡市博多区博多駅前2丁目1-1</div>
         </div>
       </div>
       <div class="access-row">
         <div class="access-icon">🚃</div>
         <div>
           <div class="access-label">電車</div>
-          <div class="access-value">〇〇線「〇〇駅」西口より徒歩5分</div>
+          <div class="access-value">福岡市地下鉄空港線「博多駅」西口より徒歩5分</div>
         </div>
       </div>
       <div class="access-row">
         <div class="access-icon">🚌</div>
         <div>
           <div class="access-label">バス</div>
-          <div class="access-value">〇〇バス「さくら病院前」バス停すぐ</div>
+          <div class="access-value">西鉄バス「博多駅前A」停留所より徒歩3分</div>
         </div>
       </div>
       <div class="access-row">
@@ -2049,9 +2053,9 @@
     <div class="contact-card reveal reveal-delay-1">
       <span class="contact-icon-big">📞</span>
       <div class="contact-type">お電話</div>
-      <div class="contact-main">000-1234-5678</div>
+      <div class="contact-main">092-555-1234</div>
       <div class="contact-sub">平日 9:00〜17:00<br>土曜 9:00〜12:00</div>
-      <a href="tel:0001234567" class="contact-cta-btn">今すぐ電話する</a>
+      <a href="tel:0925551234" class="contact-cta-btn">今すぐ電話する</a>
     </div>
     <div class="contact-card reveal reveal-delay-2">
       <span class="contact-icon-big">💻</span>
@@ -2076,7 +2080,7 @@
     <h2>まずはお気軽にご相談ください</h2>
     <p>初診・再診とも、お電話またはWEBから24時間いつでもご予約いただけます。<br>地域の皆さまの健康を、さくら総合病院がしっかりサポートします。</p>
     <div class="cta-banner-actions">
-      <a href="tel:0001234567" class="btn-white">📞 今すぐ電話予約</a>
+      <a href="tel:0925551234" class="btn-white">📞 今すぐ電話予約</a>
       <a href="#contact" class="btn-outline-white">WEB予約はこちら →</a>
     </div>
   </div>
@@ -2119,7 +2123,7 @@
 
 <!-- Mobile Floating CTA -->
 <div class="float-cta">
-  <a href="tel:0001234567">📞 電話予約</a>
+  <a href="tel:0925551234">📞 電話予約</a>
   <a href="#contact">💻 WEB予約</a>
 </div>
 

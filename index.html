@@ -1414,6 +1414,123 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(196,99,122,0.4);
     }
+
+    /* ─── Hero Photo Frame ─── */
+    .hero-photo-container {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(44,38,36,0.22);
+    }
+
+    .hero-main-photo {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-photo-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(30,24,22,0.88) 0%, transparent 100%);
+      padding: 40px 20px 20px;
+      color: white;
+    }
+
+    .hero-doctor-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .hero-doctor-avatars {
+      display: flex;
+    }
+
+    .hero-doctor-avatars img {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid white;
+      object-fit: cover;
+      object-position: top;
+      margin-left: -8px;
+    }
+
+    .hero-doctor-avatars img:first-child { margin-left: 0; }
+
+    /* ─── Doctor Photos ─── */
+    .doctor-avatar-big img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.4s ease;
+    }
+
+    .doctor-card:hover .doctor-avatar-big img {
+      transform: scale(1.05);
+    }
+
+    /* ─── Facility Photos ─── */
+    #facility {
+      background: linear-gradient(160deg, var(--cream) 0%, #fff5f8 100%);
+    }
+
+    .facility-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .facility-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .facility-photo-card {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 20px var(--shadow);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .facility-photo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(44,38,36,0.14);
+    }
+
+    .facility-photo-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .facility-photo-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .facility-photo-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(30,24,22,0.78) 0%, transparent 100%);
+      color: white;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      padding: 28px 14px 10px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -1476,34 +1593,29 @@
     </div>
 
     <div class="hero-visual">
-      <div class="hero-card-stack">
-        <div class="stat-card">
-          <div class="doctor-row">
-            <div class="doctor-avatars">
-              <span>👨‍⚕️</span><span>👩‍⚕️</span><span>👨‍⚕️</span>
+      <div class="hero-photo-container">
+        <img
+          src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=560&h=420&fit=crop&auto=format&q=85"
+          alt="さくら総合病院 診察の様子"
+          class="hero-main-photo"
+          loading="eager">
+        <div class="hero-photo-info">
+          <div class="hero-doctor-row">
+            <div class="hero-doctor-avatars">
+              <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=68&h=68&fit=crop&auto=format&q=80" alt="医師1">
+              <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=68&h=68&fit=crop&auto=format&q=80" alt="医師2">
+              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=68&h=68&fit=crop&auto=format&q=80" alt="医師3">
             </div>
             <div>
-              <div style="font-size:0.75rem;color:var(--ink-soft)">在籍専門医</div>
-              <div style="font-size:0.85rem;font-weight:500;color:var(--ink)">12名が連携して診療</div>
+              <div style="font-size:0.72rem;color:rgba(255,255,255,0.7)">在籍専門医</div>
+              <div style="font-size:0.85rem;font-weight:500;">12名が連携して診療</div>
             </div>
           </div>
-          <div style="border-top:1px solid rgba(44,38,36,0.06);padding-top:14px;margin-top:4px">
-            <div style="font-size:0.75rem;color:var(--ink-soft);margin-bottom:6px">📞 ご予約・お問い合わせ</div>
-            <div style="font-size:1.1rem;font-weight:600;color:var(--sakura-deep);letter-spacing:0.04em">000-1234-5678</div>
-            <div style="font-size:0.72rem;color:var(--ink-soft);margin-top:3px">平日 9:00〜17:00 ／ 土曜 9:00〜12:00</div>
+          <div style="padding-top:12px;border-top:1px solid rgba(255,255,255,0.2)">
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.7);margin-bottom:4px">📞 ご予約・お問い合わせ</div>
+            <div style="font-size:1.1rem;font-weight:600;letter-spacing:0.04em">000-1234-5678</div>
+            <div style="font-size:0.7rem;color:rgba(255,255,255,0.65);margin-top:2px">平日 9:00〜17:00 ／ 土曜 9:00〜12:00</div>
           </div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon">🏥</div>
-          <div class="stat-num" style="font-size:1.5rem">24h</div>
-          <div class="stat-label">救急対応</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon">🚗</div>
-          <div class="stat-num" style="font-size:1.5rem">20台</div>
-          <div class="stat-label">無料駐車場</div>
         </div>
       </div>
     </div>
@@ -1663,6 +1775,31 @@
   </div>
 </section>
 
+<!-- Facility Photos -->
+<section id="facility">
+  <div class="section-label reveal">FACILITY</div>
+  <h2 class="section-title reveal reveal-delay-1">施設のご案内</h2>
+  <p class="section-lead reveal reveal-delay-2">清潔で快適な環境を整え、患者さまに安心してご利用いただける病院を目指しています。</p>
+  <div class="facility-grid">
+    <div class="facility-photo-card reveal reveal-delay-1">
+      <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop&auto=format&q=85" alt="受付・ロビー" loading="lazy">
+      <div class="facility-photo-label">受付・ロビー</div>
+    </div>
+    <div class="facility-photo-card reveal reveal-delay-2">
+      <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&h=400&fit=crop&auto=format&q=85" alt="外科処置室" loading="lazy">
+      <div class="facility-photo-label">外科処置室</div>
+    </div>
+    <div class="facility-photo-card reveal reveal-delay-3">
+      <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&h=400&fit=crop&auto=format&q=85" alt="検査・処置室" loading="lazy">
+      <div class="facility-photo-label">検査・処置室</div>
+    </div>
+    <div class="facility-photo-card reveal reveal-delay-4">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&auto=format&q=85" alt="リハビリテーション室" loading="lazy">
+      <div class="facility-photo-label">リハビリテーション室</div>
+    </div>
+  </div>
+</section>
+
 <!-- Testimonials -->
 <section id="testimonials">
   <div class="section-label reveal">VOICES</div>
@@ -1694,7 +1831,9 @@
   <p class="section-lead reveal reveal-delay-2">常勤医師12名が連携して診療にあたります。ここでは代表的な4名をご紹介します。</p>
   <div class="doctors-grid">
     <div class="doctor-card reveal reveal-delay-1">
-      <div class="doctor-avatar-big doc-bg-1">👨‍⚕️</div>
+      <div class="doctor-avatar-big doc-bg-1">
+        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=320&h=320&fit=crop&auto=format&q=85" alt="田中 誠一">
+      </div>
       <div class="doctor-info">
         <div class="doctor-name">田中 誠一</div>
         <div class="doctor-title">院長・内科専門医</div>
@@ -1702,7 +1841,9 @@
       </div>
     </div>
     <div class="doctor-card reveal reveal-delay-2">
-      <div class="doctor-avatar-big doc-bg-2">👩‍⚕️</div>
+      <div class="doctor-avatar-big doc-bg-2">
+        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=320&h=320&fit=crop&auto=format&q=85" alt="山本 花子">
+      </div>
       <div class="doctor-info">
         <div class="doctor-name">山本 花子</div>
         <div class="doctor-title">副院長・整形外科専門医</div>
@@ -1710,7 +1851,9 @@
       </div>
     </div>
     <div class="doctor-card reveal reveal-delay-3">
-      <div class="doctor-avatar-big doc-bg-3">👨‍⚕️</div>
+      <div class="doctor-avatar-big doc-bg-3">
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=320&h=320&fit=crop&auto=format&q=85" alt="佐藤 健二">
+      </div>
       <div class="doctor-info">
         <div class="doctor-name">佐藤 健二</div>
         <div class="doctor-title">循環器内科部長</div>
@@ -1718,7 +1861,9 @@
       </div>
     </div>
     <div class="doctor-card reveal reveal-delay-4">
-      <div class="doctor-avatar-big doc-bg-4">👩‍⚕️</div>
+      <div class="doctor-avatar-big doc-bg-4">
+        <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=320&h=320&fit=crop&auto=format&q=85" alt="鈴木 美咲">
+      </div>
       <div class="doctor-info">
         <div class="doctor-name">鈴木 美咲</div>
         <div class="doctor-title">リハビリテーション科医長</div>

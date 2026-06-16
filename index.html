@@ -51,7 +51,7 @@
     /* ─── Hero ─── */
     .hero {
       position: relative;
-      min-height: 100vh;
+      min-height: 82vh;
       display: flex;
       flex-direction: column;
       background: linear-gradient(160deg, #fff5f8 0%, #fdf0ea 40%, #edf4f2 100%);
@@ -1415,22 +1415,24 @@
       box-shadow: 0 8px 20px rgba(196,99,122,0.4);
     }
 
-    /* ─── Hero Stat Badges ─── */
-    .hero-stat-badge {
-      position: absolute;
+    /* ─── Hero Stat Row ─── */
+    .hero-stats-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .hero-stat-chip {
+      flex: 1;
       background: white;
-      border-radius: 14px;
-      padding: 12px 18px;
+      border-radius: 12px;
+      padding: 10px 14px;
       display: flex;
       align-items: center;
       gap: 10px;
-      box-shadow: 0 6px 24px rgba(44,38,36,0.12);
-      border: 1px solid rgba(232,160,180,0.15);
-      z-index: 2;
+      box-shadow: 0 4px 16px var(--shadow);
+      border: 1px solid rgba(232,160,180,0.12);
     }
-
-    .badge-tl { top: -16px; left: -20px; }
-    .badge-br { bottom: 116px; right: -24px; }
 
     /* ─── Hero Photo Frame ─── */
     .hero-photo-container {
@@ -1442,7 +1444,7 @@
 
     .hero-main-photo {
       width: 100%;
-      height: 420px;
+      height: 360px;
       object-fit: cover;
       display: block;
     }
@@ -1610,26 +1612,10 @@
     </div>
 
     <div class="hero-visual">
-      <!-- 浮き出しカード：救急 -->
-      <div class="hero-stat-badge badge-tl">
-        <div class="stat-icon">🏥</div>
-        <div>
-          <div class="stat-num" style="font-size:1.2rem">24h</div>
-          <div class="stat-label">救急対応</div>
-        </div>
-      </div>
-      <!-- 浮き出しカード：駐車場 -->
-      <div class="hero-stat-badge badge-br">
-        <div class="stat-icon">🚗</div>
-        <div>
-          <div class="stat-num" style="font-size:1.2rem">20台</div>
-          <div class="stat-label">無料駐車場</div>
-        </div>
-      </div>
       <!-- メイン写真フレーム -->
       <div class="hero-photo-container">
         <img
-          src="https://images.pexels.com/photos/6129441/pexels-photo-6129441.jpeg?auto=compress&cs=tinysrgb&w=560&h=420&fit=crop"
+          src="https://images.pexels.com/photos/5593720/pexels-photo-5593720.jpeg?auto=compress&cs=tinysrgb&w=560&h=360&fit=crop"
           alt="さくら総合病院 診察の様子"
           class="hero-main-photo"
           loading="eager">
@@ -1637,8 +1623,8 @@
           <div class="hero-doctor-row">
             <div class="hero-doctor-avatars">
               <img src="https://images.pexels.com/photos/5722163/pexels-photo-5722163.jpeg?auto=compress&cs=tinysrgb&w=68&h=68&fit=crop" alt="医師1">
-              <img src="https://images.pexels.com/photos/8376281/pexels-photo-8376281.jpeg?auto=compress&cs=tinysrgb&w=68&h=68&fit=crop" alt="医師2">
-              <img src="https://images.pexels.com/photos/5722165/pexels-photo-5722165.jpeg?auto=compress&cs=tinysrgb&w=68&h=68&fit=crop" alt="医師3">
+              <img src="https://images.pexels.com/photos/8376237/pexels-photo-8376237.jpeg?auto=compress&cs=tinysrgb&w=68&h=68&fit=crop" alt="医師2">
+              <img src="https://images.pexels.com/photos/15962798/pexels-photo-15962798.jpeg?auto=compress&cs=tinysrgb&w=68&h=68&fit=crop" alt="医師3">
             </div>
             <div>
               <div style="font-size:0.72rem;color:rgba(255,255,255,0.7)">在籍専門医</div>
@@ -1649,6 +1635,23 @@
             <div style="font-size:0.72rem;color:rgba(255,255,255,0.7);margin-bottom:4px">📞 ご予約・お問い合わせ</div>
             <div style="font-size:1.1rem;font-weight:600;letter-spacing:0.04em">000-1234-5678</div>
             <div style="font-size:0.7rem;color:rgba(255,255,255,0.65);margin-top:2px">平日 9:00〜17:00 ／ 土曜 9:00〜12:00</div>
+          </div>
+        </div>
+      </div>
+      <!-- 救急・駐車場バッジ（写真下に横並び） -->
+      <div class="hero-stats-row">
+        <div class="hero-stat-chip">
+          <div class="stat-icon">🏥</div>
+          <div>
+            <div class="stat-num" style="font-size:1.1rem">24h</div>
+            <div class="stat-label">救急対応</div>
+          </div>
+        </div>
+        <div class="hero-stat-chip">
+          <div class="stat-icon">🚗</div>
+          <div>
+            <div class="stat-num" style="font-size:1.1rem">20台</div>
+            <div class="stat-label">無料駐車場</div>
           </div>
         </div>
       </div>
@@ -1828,7 +1831,7 @@
       <div class="facility-photo-label">検査・処置室</div>
     </div>
     <div class="facility-photo-card reveal reveal-delay-4">
-      <img src="https://images.pexels.com/photos/13538710/pexels-photo-13538710.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="リハビリテーション室" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1645005513713-9e2b92a687d3?w=600&h=400&fit=crop&auto=format&q=85" alt="リハビリテーション室" loading="lazy">
       <div class="facility-photo-label">リハビリテーション室</div>
     </div>
   </div>
@@ -1886,7 +1889,7 @@
     </div>
     <div class="doctor-card reveal reveal-delay-3">
       <div class="doctor-avatar-big doc-bg-3">
-        <img src="https://images.pexels.com/photos/5722165/pexels-photo-5722165.jpeg?auto=compress&cs=tinysrgb&w=320&h=320&fit=crop" alt="佐藤 健二">
+        <img src="https://images.pexels.com/photos/15962798/pexels-photo-15962798.jpeg?auto=compress&cs=tinysrgb&w=320&h=320&fit=crop" alt="佐藤 健二">
       </div>
       <div class="doctor-info">
         <div class="doctor-name">佐藤 健二</div>

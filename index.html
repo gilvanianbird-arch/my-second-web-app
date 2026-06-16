@@ -1415,6 +1415,23 @@
       box-shadow: 0 8px 20px rgba(196,99,122,0.4);
     }
 
+    /* ─── Hero Stat Badges ─── */
+    .hero-stat-badge {
+      position: absolute;
+      background: white;
+      border-radius: 14px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 6px 24px rgba(44,38,36,0.12);
+      border: 1px solid rgba(232,160,180,0.15);
+      z-index: 2;
+    }
+
+    .badge-tl { top: -16px; left: -20px; }
+    .badge-br { bottom: 116px; right: -24px; }
+
     /* ─── Hero Photo Frame ─── */
     .hero-photo-container {
       position: relative;
@@ -1593,18 +1610,35 @@
     </div>
 
     <div class="hero-visual">
+      <!-- 浮き出しカード：救急 -->
+      <div class="hero-stat-badge badge-tl">
+        <div class="stat-icon">🏥</div>
+        <div>
+          <div class="stat-num" style="font-size:1.2rem">24h</div>
+          <div class="stat-label">救急対応</div>
+        </div>
+      </div>
+      <!-- 浮き出しカード：駐車場 -->
+      <div class="hero-stat-badge badge-br">
+        <div class="stat-icon">🚗</div>
+        <div>
+          <div class="stat-num" style="font-size:1.2rem">20台</div>
+          <div class="stat-label">無料駐車場</div>
+        </div>
+      </div>
+      <!-- メイン写真フレーム -->
       <div class="hero-photo-container">
         <img
-          src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=560&h=420&fit=crop&auto=format&q=85"
+          src="https://images.pexels.com/photos/6129441/pexels-photo-6129441.jpeg?auto=compress&cs=tinysrgb&w=560&h=420&fit=crop"
           alt="さくら総合病院 診察の様子"
           class="hero-main-photo"
           loading="eager">
         <div class="hero-photo-info">
           <div class="hero-doctor-row">
             <div class="hero-doctor-avatars">
-              <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=68&h=68&fit=crop&auto=format&q=80" alt="医師1">
-              <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=68&h=68&fit=crop&auto=format&q=80" alt="医師2">
-              <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=68&h=68&fit=crop&auto=format&q=80" alt="医師3">
+              <img src="https://images.pexels.com/photos/5722163/pexels-photo-5722163.jpeg?auto=compress&cs=tinysrgb&w=68&h=68&fit=crop" alt="医師1">
+              <img src="https://images.pexels.com/photos/8376281/pexels-photo-8376281.jpeg?auto=compress&cs=tinysrgb&w=68&h=68&fit=crop" alt="医師2">
+              <img src="https://images.pexels.com/photos/5722165/pexels-photo-5722165.jpeg?auto=compress&cs=tinysrgb&w=68&h=68&fit=crop" alt="医師3">
             </div>
             <div>
               <div style="font-size:0.72rem;color:rgba(255,255,255,0.7)">在籍専門医</div>
@@ -1786,15 +1820,15 @@
       <div class="facility-photo-label">受付・ロビー</div>
     </div>
     <div class="facility-photo-card reveal reveal-delay-2">
-      <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&h=400&fit=crop&auto=format&q=85" alt="外科処置室" loading="lazy">
-      <div class="facility-photo-label">外科処置室</div>
+      <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&h=400&fit=crop&auto=format&q=85" alt="手術室" loading="lazy">
+      <div class="facility-photo-label">手術室</div>
     </div>
     <div class="facility-photo-card reveal reveal-delay-3">
       <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&h=400&fit=crop&auto=format&q=85" alt="検査・処置室" loading="lazy">
       <div class="facility-photo-label">検査・処置室</div>
     </div>
     <div class="facility-photo-card reveal reveal-delay-4">
-      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&auto=format&q=85" alt="リハビリテーション室" loading="lazy">
+      <img src="https://images.pexels.com/photos/13538710/pexels-photo-13538710.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="リハビリテーション室" loading="lazy">
       <div class="facility-photo-label">リハビリテーション室</div>
     </div>
   </div>
@@ -1832,7 +1866,7 @@
   <div class="doctors-grid">
     <div class="doctor-card reveal reveal-delay-1">
       <div class="doctor-avatar-big doc-bg-1">
-        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=320&h=320&fit=crop&auto=format&q=85" alt="田中 誠一">
+        <img src="https://images.pexels.com/photos/5722163/pexels-photo-5722163.jpeg?auto=compress&cs=tinysrgb&w=320&h=320&fit=crop" alt="田中 誠一">
       </div>
       <div class="doctor-info">
         <div class="doctor-name">田中 誠一</div>
@@ -1842,7 +1876,7 @@
     </div>
     <div class="doctor-card reveal reveal-delay-2">
       <div class="doctor-avatar-big doc-bg-2">
-        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=320&h=320&fit=crop&auto=format&q=85" alt="山本 花子">
+        <img src="https://images.pexels.com/photos/8376237/pexels-photo-8376237.jpeg?auto=compress&cs=tinysrgb&w=320&h=320&fit=crop" alt="山本 花子">
       </div>
       <div class="doctor-info">
         <div class="doctor-name">山本 花子</div>
@@ -1852,7 +1886,7 @@
     </div>
     <div class="doctor-card reveal reveal-delay-3">
       <div class="doctor-avatar-big doc-bg-3">
-        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=320&h=320&fit=crop&auto=format&q=85" alt="佐藤 健二">
+        <img src="https://images.pexels.com/photos/5722165/pexels-photo-5722165.jpeg?auto=compress&cs=tinysrgb&w=320&h=320&fit=crop" alt="佐藤 健二">
       </div>
       <div class="doctor-info">
         <div class="doctor-name">佐藤 健二</div>
@@ -1862,7 +1896,7 @@
     </div>
     <div class="doctor-card reveal reveal-delay-4">
       <div class="doctor-avatar-big doc-bg-4">
-        <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=320&h=320&fit=crop&auto=format&q=85" alt="鈴木 美咲">
+        <img src="https://images.pexels.com/photos/8376281/pexels-photo-8376281.jpeg?auto=compress&cs=tinysrgb&w=320&h=320&fit=crop" alt="鈴木 美咲">
       </div>
       <div class="doctor-info">
         <div class="doctor-name">鈴木 美咲</div>
